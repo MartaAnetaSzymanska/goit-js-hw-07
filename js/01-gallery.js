@@ -17,4 +17,10 @@ gallery.addEventListener("click", (event) => {
     basicLightbox.create(`<img src="${event.target.dataset.source}" width="800" height="600">
   `);
   instance.show();
+  const visible = instance.visible();
+  if (visible === true) {
+    document.addEventListener("keydown", (event) => {
+      instance.close();
+    });
+  }
 });

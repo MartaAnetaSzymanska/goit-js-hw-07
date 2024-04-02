@@ -10,3 +10,15 @@ const listItems = galleryItems
   )
   .join("");
 gallery.innerHTML = listItems;
+
+gallery.addEventListener("click", (event) => {
+  event.preventDefault();
+  const lightbox = new SimpleLightbox(`.gallery a`, {
+    captions: true,
+    captionSelector: "img",
+    captionsData: "alt",
+    captionPosition: "bottom",
+    captionDelay: 250,
+  });
+  lightbox.open();
+});
