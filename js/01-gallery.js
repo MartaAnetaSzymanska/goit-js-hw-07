@@ -20,7 +20,9 @@ gallery.addEventListener("click", (event) => {
   const visible = instance.visible();
   if (visible === true) {
     document.addEventListener("keydown", (event) => {
-      instance.close();
+      if (event.key === "Escape") {
+        instance.close();
+      }
     });
   }
 });
